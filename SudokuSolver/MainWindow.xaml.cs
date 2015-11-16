@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using SudokuChecker;
+
 namespace SudokuSolver
 {
     /// <summary>
@@ -20,6 +22,7 @@ namespace SudokuSolver
     /// </summary>
     public partial class MainWindow : Window
     {
+        Checker checker;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +30,7 @@ namespace SudokuSolver
 
         private void checkSudokuButton_Click(object sender, RoutedEventArgs e)
         {
-
+            checker = new Checker(sudokuTextBox.Text);
         }
     }
 }
