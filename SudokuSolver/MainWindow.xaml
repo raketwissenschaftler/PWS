@@ -4,8 +4,8 @@
         Title="MainWindow" Height="350" Width="525">
     <StackPanel Orientation="Vertical">
         <TextBlock Text="Sudoku: " />
-        <TextBox Name="sudokuTextBox" />
+        <TextBox Name="sudokuTextBox" Text="test"/>
         <Button Name="checkSudokuButton" Click="checkSudokuButton_Click" Content="Controleer"/>
-        <TextBlock Name="outputTextBlock" />
+        <TextBlock Name="outputTextBlock"/>
     </StackPanel>
 </Window>

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using SudokuChecker;
+using System.Diagnostics;
 
 namespace SudokuSolver
 {
@@ -31,6 +32,7 @@ namespace SudokuSolver
         private void checkSudokuButton_Click(object sender, RoutedEventArgs e)
         {
             checker = new Checker(sudokuTextBox.Text);
+            outputTextBlock.Text = checker.FormatSudoku();
         }
     }
 }
