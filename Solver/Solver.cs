@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Solver
+namespace SudokuSolver
 {
     public class Solver
     {
@@ -18,7 +18,23 @@ namespace Solver
             columns = Utility.GetColumns(sudokuArray);
             rows = Utility.GetRows(sudokuArray);
             squares = Utility.GetSquares(sudokuArray);
+        }
 
+        public int[] GetEmptyPlacesPerSquare()
+        {
+            int[] emptyPlacesArray = new int[9];
+            int counter = 0;
+            foreach (int[] square in squares)
+            {
+                emptyPlacesArray[counter] = square.Count(x => x == 0);
+                counter++;
+            }
+            return emptyPlacesArray;
+        }
+
+        public int[][] GetSquarePossibilities(int[] sudokuSquare)
+        {
+            forea
         }
     }
 }

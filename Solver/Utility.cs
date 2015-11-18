@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Solver
+namespace SudokuSolver
 {
     public static class Utility
     {
@@ -70,6 +70,16 @@ namespace Solver
         public static int[] SudokuToArray(string sudoku)
         {
             return sudoku.ToCharArray().Select(i => Int32.Parse(i.ToString())).ToArray();
+        }
+
+        public static int GetColumn(int index)
+        {
+            return index % 9;
+        }
+
+        public static int GetRow(int index)
+        {
+            return
         }
     }
 }

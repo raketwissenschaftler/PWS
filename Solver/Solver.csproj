@@ -8,7 +8,7 @@
     <ProjectGuid>{71911F96-302A-4111-8FAE-AD344644C51A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solver</RootNamespace>
+    <RootNamespace>SudokuSolver</RootNamespace>
     <AssemblyName>Solver</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>

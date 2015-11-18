@@ -14,9 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using SudokuChecker;
+using SudokuSolver;
 using System.Diagnostics;
 
-namespace SudokuSolver
+namespace SudokuSolverProgram
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,6 +25,7 @@ namespace SudokuSolver
     public partial class MainWindow : Window
     {
         Checker checker;
+        private static string exampleSudoku = "000836009005090000600170040003600002070000918000050000050019400000460000009000037";
         public MainWindow()
         {
             InitializeComponent();
@@ -31,8 +33,15 @@ namespace SudokuSolver
 
         private void checkSudokuButton_Click(object sender, RoutedEventArgs e)
         {
-            checker = new Checker(sudokuTextBox.Text);
+            string sudoku = sudokuTextBox.Text;
+            if (sudoku == "test")
+            {
+                sudoku = exampleSudoku;
+            }
+            checker = new Checker(sudoku);
             outputTextBlock.Text = checker.FormatSudoku();
+            Solver solver = new Solver(sudoku);
+            outputTextBlock.Text = String.Join(",", solver.GetEmptyPlacesPerSquare());
         }
     }
 }

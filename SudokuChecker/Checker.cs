@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using Solver;
+using SudokuSolver;
 
 namespace SudokuChecker
 {
@@ -26,7 +26,7 @@ namespace SudokuChecker
                 throw new Exception("Invalid sudoku string");
             }
         }
-        public string FormatSudoku()
+        public static string FormatSudoku(int[] sudokuArray)
         {
             string row = "------------\n";
             string formattedSudoku = "";
@@ -53,7 +53,7 @@ namespace SudokuChecker
             return formattedSudoku;
         }
 
-        public bool CheckColumns()
+        public static bool CheckColumns(int[] sudokuArray)
         {
             int[][] columnsArray = Utility.GetColumns(sudokuArray);
             foreach (int[] column in columnsArray)
@@ -69,7 +69,7 @@ namespace SudokuChecker
             return true;
         }
 
-        public bool CheckRows()
+        public static bool CheckRows(int[] sudokuArray)
         {
             int[][] rowsArray = Utility.GetRows(sudokuArray);
             foreach (int[] row in rowsArray)
@@ -85,7 +85,7 @@ namespace SudokuChecker
             return true;
         }
 
-        public bool CheckSquares()
+        public static bool CheckSquares(int[] sudokuArray)
         {
             int[][] squaresArray = Utility.GetSquares(sudokuArray);
             foreach (int[] square in squaresArray)

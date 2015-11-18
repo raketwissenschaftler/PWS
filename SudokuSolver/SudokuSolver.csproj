@@ -7,7 +7,7 @@
     <ProjectGuid>{03F56020-CA78-4BA4-8D11-A74AC849C66D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SudokuSolver</RootNamespace>
+    <RootNamespace>SudokuSolverProgram</RootNamespace>
     <AssemblyName>SudokuSolver</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -110,6 +110,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Solver\Solver.csproj">
+      <Project>{71911f96-302a-4111-8fae-ad344644c51a}</Project>
+      <Name>Solver</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SudokuChecker\Checker.csproj">
       <Project>{09e6f594-2b3d-4550-b5af-06529bea3b24}</Project>
       <Name>Checker</Name>
