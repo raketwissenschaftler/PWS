@@ -31,10 +31,19 @@ namespace SudokuSolver
             }
             return emptyPlacesArray;
         }
-
-        public int[][] GetSquarePossibilities(int[] sudokuSquare)
+        public int[] GetPossibilitiesForPlace(int placeIndex)
         {
-            forea
+            int[] placeSquare = squares[Utility.GetSquare(placeIndex)];
+            int[] numbersInSudoku = Enumerable.Range(0, 9).ToArray();
+            List<int> resultsList = new List<int>();
+            foreach (int sudokuNumber in numbersInSudoku)
+            {
+                if (!placeSquare.Contains(sudokuNumber))
+                {
+                    resultsList.Add(sudokuNumber);
+                }
+            }
+            return resultsList.ToArray();
         }
     }
 }

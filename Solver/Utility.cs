@@ -79,7 +79,14 @@ namespace SudokuSolver
 
         public static int GetRow(int index)
         {
-            return
+            return index / 9;
+        }
+
+        public static int GetSquare(int index)
+        {
+            int[] startIndices = new int[9] { 0, 3, 6, 27, 30, 33, 54, 47, 60 };
+            int startIndex =  startIndices.First(x => index > x);
+            return Array.IndexOf(startIndices, startIndex);
         }
     }
 }
